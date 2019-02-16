@@ -1,4 +1,4 @@
-header {
+.header-main {
   margin-top: 45px;
 }
 
@@ -11,7 +11,7 @@ header {
           justify-content: space-between;
 }
 
-.main-nav__list {
+.nav-main__list {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -20,7 +20,7 @@ header {
           align-items: center;
 }
 
-.main-nav__item {
+.nav-main__item {
   margin-left: 50px;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
@@ -32,61 +32,35 @@ header {
   text-transform: uppercase;
 }
 
-.main-nav__item > a {
+.nav-main__item > a {
+  color: #32325d;
   text-decoration: none;
   position: relative;
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
 }
 
-.main-nav__item a:before {
+.nav-main__item a:before {
   content: "";
   width: 0;
   height: 2px;
   position: absolute;
   bottom: -3px;
   left: 50%;
-  background: red;
+  background: #c05cff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.main-nav__item a:hover:before {
+.nav-main__item a:hover:before {
   width: 100%;
   left: 0;
   background: purple;
-  opacity: 0.3;
+  opacity: 1;
 }
 
 .user-nav__btn {
   min-width: 100px;
-}
-
-.main-offer {
-  margin-top: 280px;
-  width: 36%;
-}
-
-.main-offer__title {
-  font-size: 48px;
-}
-
-.main-offer__text {
-  font-size: 23px;
-  margin-top: 50px;
-  margin-bottom: 70px;
-}
-
-.main-offer__btn {
-  margin-right: 50px;
-  min-width: 140px;
-  text-transform: uppercase;
-}
-
-.main-offer__faq {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 main {
@@ -94,19 +68,13 @@ main {
 }
 
 .features-list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
+  display: block;
   padding: 0;
 }
 
 .features-item {
-  -webkit-flex-basis: 40%;
-          flex-basis: 40%;
-  max-height: 480px;
-  width: 560px;
+  width: 45.55%;
+  float: left;
 }
 
 .features-item__text {
@@ -114,6 +82,7 @@ main {
 }
 
 .features-heading {
+  width: 45.55%;
   padding-top: 220px;
 }
 
@@ -136,7 +105,7 @@ main {
   margin-right: 110px;
 }
 
-.feature-card {
+.features-card {
   background-color: #fff;
   box-shadow: -8.691px 7.431px 20px 0 rgba(212, 212, 250, 0.2);
   margin-bottom: 60px;
@@ -146,6 +115,7 @@ main {
   padding-left: 60px;
   padding-right: 60px;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .features-item h2 {
@@ -219,7 +189,6 @@ main {
 }
 
 .last-offer--wrapper {
-  margin-top: 100px;
   padding-top: 170px;
   padding-bottom: 120px;
   background-color: #fafaff;
@@ -258,7 +227,16 @@ main {
 }
 
 .offer-form {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  max-width: 560px;
 }
 
 .offer-form input {
@@ -266,29 +244,62 @@ main {
   font-size: 23px;
   line-height: 80px;
   font-weight: 300;
-  border: transparent;
-  border-radius: 5px;
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: transparent;
+  border-right: 1px solid #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   background-color: white;
   box-shadow: -6.691px 7.431px 20px 0px rgba(212, 212, 250, 0.2);
   width: 560px;
 }
 
+.offer-form input:focus:required:invalid {
+  border-color: transparent;
+}
+
+.offer-form input:required:valid {
+  border-color: green;
+}
+
 .offer-form__btn {
-  position: absolute;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   border: none;
-  text-transform: uppercase;
   font-size: 15px;
   color: #845cff;
-  background: transparent;
-  top: 33px;
-  left: 378px;
+  background: #fff;
+  line-height: 80px;
   cursor: pointer;
+  outline: none;
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: transparent;
+  border-left: 1px solid #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.offer-form__btn:focus:required:invalid {
+  border-color: transparent;
+}
+
+.offer-form__btn:required:valid {
+  border-color: green;
 }
 
 .offer-form__btn img {
-  position: absolute;
-  top: 0px;
-  left: 121px;
+  padding-right: 35px;
+  padding-left: 10px;
 }
 
 footer {
@@ -374,6 +385,7 @@ footer a:hover {
 
 .footer-copy {
   margin-top: 70px;
+  padding-bottom: 50px;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -397,6 +409,33 @@ footer a:hover {
   margin-left: 35px;
 }
 
+.main-offer {
+  margin-top: 280px;
+  width: 36%;
+}
+
+.main-offer__title {
+  font-size: 48px;
+}
+
+.main-offer__text {
+  font-size: 23px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.main-offer__btn {
+  margin-right: 50px;
+  min-width: 140px;
+  text-transform: uppercase;
+}
+
+.main-offer__faq {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 ::-webkit-input-placeholder {
   color: #666;
 }
@@ -414,12 +453,10 @@ footer a:hover {
 }
 
 ::-moz-selection {
-  background-color: #32325d;
   color: #fff;
 }
 
 ::selection {
-  background-color: #32325d;
   color: #fff;
 }
 
@@ -503,12 +540,13 @@ b, strong {
   text-decoration: none;
   outline: none;
   font-family: #32325d;
-  color: #fff !important;
+  color: #fff;
   padding: 10px 20px;
   width: auto;
-  border-radius: 3px;
   background-color: #845cff;
   box-shadow: -6.691px 7.431px 20px 0px rgba(111, 54, 255, 0.2);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .btn:hover {
@@ -517,15 +555,13 @@ b, strong {
   color: #fff;
   background-color: #c05cff;
   box-shadow: -6.691px 7.431px 20px 0px rgba(111, 54, 255, 0.2);
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
 }
 
 .btn:active {
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  box-shadow: inset -4px -2px 20px black;
-  -webkit-transition: .2s ease-in-out;
-  transition: .2s ease-in-out;
+  color: #000 !important;
+  background-color: transparent;
+  outline: 2px solid #c05cff;
+  border-radius: 3px;
+  box-shadow: none;
 }
+
